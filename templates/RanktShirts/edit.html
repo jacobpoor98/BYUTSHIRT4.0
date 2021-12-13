@@ -1,11 +1,20 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 {% comment %} This form will update the articlesOfClothing table rows {% endcomment %}
+<main class="site-wrapper">
+  <div class="pt-table">
+      <div class="pt-tablecell page-about relative">
+          <!-- .close -->
+          <a href="{%url 'index'%}" class="page-close"><i class="tf-ion-close"></i></a>
+          <!-- /.close -->
+{% comment %} This form will collect information for the articlesOfClothing table {% endcomment %}
+<section class="page-section" id="contact">
+  <div class="container"><br><br><br><br><br><br><br><br><br>
 <form
   class="row contact-form no-gutter"
   style="padding: 2rem 2rem 2rem 2rem"
   action="{% url 'update' AoC_id=ArticleOfClothing.id  %}"
   method="POST"
-> {% csrf_token %}
+><br><br> {% csrf_token %}
 <input style="width: 250px" type="hidden" id="clothing_id"value={{ ArticleOfClothing.id }}>
 
   <div class="col-xs-12 col-sm-6">
@@ -23,7 +32,7 @@
   </div>
   <div class="col-xs-12 col-sm-6">
     <div class="input-field email">
-      <span class="input-icon" id="price">$</span>
+      <span class="input-icon" id="price">Price $</span>
       <input
         type="text"
         class="form-control"
@@ -37,7 +46,7 @@
   <!-- ./col- -->
   <div class="col-xs-12 col-sm-6">
     <div class="input-field name">
-      <span class="input-icon" id="material">Mats</span>
+      <span class="input-icon" id="material">Materials</span>
       <select class="form-control" name="material" id="material" required>
         <option value="{{ ArticleOfClothing.material }}" selected>{{ ArticleOfClothing.material }}</option>
         <option value="">Choose Material Type</option>
@@ -50,7 +59,7 @@
 
   <div class="col-xs-12 col-sm-6">
     <div class="input-field email">
-      <span class="input-icon" id="category">Cat</span>
+      <span class="input-icon" id="category">Category</span>
       <select class="form-control" name="category" id="category" required>
         <option value="{{ ArticleOfClothing.category }}" selected>{{ ArticleOfClothing.category }}</option>
         <option value="">Choose Category</option>
@@ -76,7 +85,7 @@
   <!-- ./col- -->
   <div class="col-xs-12 col-sm-6">
     <div class="input-field email">
-      <span class="input-icon" id="pColor">Clr</span>
+      <span class="input-icon" id="pColor">Color</span>
       <select class="form-control" name="pColor" id="pColor" required>
         <option value="{{ ArticleOfClothing.primarycolor }}" selected>{{ ArticleOfClothing.primarycolor }}</option>
         <option value="">Primary Color</option>
@@ -91,10 +100,11 @@
   <div class="col-xs-12 col-sm-6">
     <div class="input-field name">
       <span class="btn-border">
+        <br>
         <button
           type="submit"
           class="btn btn-primary btn-custom-border text-uppercase"
-          onclick="alert('Update successfully!');"
+          onclick="alert('Update successful!');"
         >
           Update
         </button>

@@ -1,38 +1,38 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-
-<div style="text-align: center">
-    <h2>Swag:</h2><br>
-     </div>
-     {% for ArticleOfClothing in ArticleOfClothing %}
-     <div style="display: flex; justify-content: center;">
-       {% comment %} Table used to display the articles of clothing nicely {% endcomment %}
-       <table style="display: flex; flex: 0 0 25em; width: 600px; padding-right: 10px; border: 1px solid white;">
-         <td>
-           {% comment %} This will dynamically display the name of each entry in
-           the articlesOfClothing table {% endcomment %}
-           <p
-             style="
-               
-               width: 500px;
-               padding: 10px;
-             "
-           >
-           {{ ArticleOfClothing.clothing_name }}<!--The names of the column names have to match perfectly-->
-         </td>
-         <td>
-            {% comment %} This button will bring up all the fields from a given entry in the 
-            articlesOfClothing table. You'll be able to delete and update here {% endcomment %}
-             <a class="button" href="{% url 'showSingleArticle' item_id=ArticleOfClothing.id %}"
-               >View</a
-               >
-           </p>
-         </td>
-       </table>
-     </div>
-     {% endfor %}
-
-
-
-
-
+<div style="padding: 2rem 2rem 2rem 2rem; background-color: lightgray">  
+    <div style="text-align: center"><br><br>
+      <h5 style="color: navyblue; font-size: 60px;
+      text-align: left;">Swag</h5>
+    </div><br>
+  <br /><br>
+  {% for ArticleOfClothing in ArticleOfClothing %}
+        <div style="display: flex; justify-content: center;">
+          {% comment %} Table used to display the articles of clothing nicely {% endcomment %}
+          <br><br><br>
+          <table style="display: flex; width: 600px; padding:  0.5rem 0.5rem 0.5rem 0.5rem; border: 1px solid white;">
+            <td>
+              {% comment %} This will dynamically display the name of each entry in
+              the articlesOfClothing table {% endcomment %}
+              <p
+                style="
+                  
+                  width: 500px;
+                  padding: 10px;
+                "
+              >
+              {{ ArticleOfClothing.clothing_name }}<!--The names of the column names have to match perfectly-->
+            </td>
+            <td>
+                {% comment %} This button will bring up all the fields from a given entry in the 
+                articlesOfClothing table. You'll be able to delete and update here {% endcomment %}
+                <a href="{% url 'showSingleArticle' item_id=ArticleOfClothing.id %}" style="color: #0D5373; font-weight: bold">View</a>
+              </p>
+            </td>
+          </table><br>
+        </div><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+        {% endfor %}
+</div>
 {%endblock%}
+
+

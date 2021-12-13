@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 {% comment %} This will dynamically display all the fields of a given entry in 
 the articlesOfClothing table {% endcomment %}
+<div style="padding: 2rem 2rem 2rem 2rem; background-color: lightgray">  
+  <div style="text-align: center"><br><br>
+  </div><br>
+<br /><br>
 <p
   style="
     margin: auto;
@@ -21,12 +25,14 @@ the articlesOfClothing table {% endcomment %}
   {% comment %} This will save the changes they made to the id of the entry they were editing {% endcomment %}
   <a
     class="button"
-    style="float: right"
+    style="float: right; color: #0D5373; font-weight: bold"
     href="{% url 'edit' AoC_id=ArticleOfClothing.id%}"
     >Edit</a
   >
   {% comment %} Delete button to delete entry entirely {% endcomment %}
-  <a class="button" style="float: right" onclick="alert('Successfully Deleted')" href="{% url 'delete' ArticleOfClothingID=ArticleOfClothing.id%}">Delete</a>
+  <a class="button" style="float: right; color: #0D5373; font-weight: bold" onclick="alert('Successfully Deleted')" href="{% url 'delete' ArticleOfClothingID=ArticleOfClothing.id%}">Delete</a>
+</div><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </div>
 
 {%endblock%}
