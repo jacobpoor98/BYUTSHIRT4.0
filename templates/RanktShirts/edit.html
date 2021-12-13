@@ -1,0 +1,107 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+{% comment %} This form will update the articlesOfClothing table rows {% endcomment %}
+<form
+  class="row contact-form no-gutter"
+  style="padding: 2rem 2rem 2rem 2rem"
+  action="{% url 'update' AoC_id=ArticleOfClothing.id  %}"
+  method="POST"
+> {% csrf_token %}
+<input style="width: 250px" type="hidden" id="clothing_id"value={{ ArticleOfClothing.id }}>
+
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field name">
+      <span class="input-icon" id="clothing_name">Title</span>
+      <input
+        type="text"
+        class="form-control"
+        name="clothing_name"
+        placeholder="Clothing Name"
+        value="{{ ArticleOfClothing.clothing_name }}"
+        autofocus
+      />
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field email">
+      <span class="input-icon" id="price">$</span>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        id="price"
+        placeholder="Price"
+        value={{ ArticleOfClothing.price }}
+      />
+    </div>
+  </div>
+  <!-- ./col- -->
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field name">
+      <span class="input-icon" id="material">Mats</span>
+      <select class="form-control" name="material" id="material" required>
+        <option value="{{ ArticleOfClothing.material }}" selected>{{ ArticleOfClothing.material }}</option>
+        <option value="">Choose Material Type</option>
+        {% for lstMaterials in lstMaterials%}
+        <option value="{{ lstMaterials }}">{{ lstMaterials }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field email">
+      <span class="input-icon" id="category">Cat</span>
+      <select class="form-control" name="category" id="category" required>
+        <option value="{{ ArticleOfClothing.category }}" selected>{{ ArticleOfClothing.category }}</option>
+        <option value="">Choose Category</option>
+        {% for lstCategory in lstCategory%}
+        <option value="{{ lstCategory }}">{{ lstCategory }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <!-- ./col- -->
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field name">
+      <span class="input-icon" id="size">Size</span>
+      <select class="form-control" name="size" id="size" required>
+        <option value="{{ ArticleOfClothing.size }}" selected>{{ ArticleOfClothing.size }}</option>
+        <option value="">Size</option>
+        {% for lstSize in lstSize%}
+        <option value="{{ lstSize }}">{{ lstSize }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <!-- ./col- -->
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field email">
+      <span class="input-icon" id="pColor">Clr</span>
+      <select class="form-control" name="pColor" id="pColor" required>
+        <option value="{{ ArticleOfClothing.primarycolor }}" selected>{{ ArticleOfClothing.primarycolor }}</option>
+        <option value="">Primary Color</option>
+        {% for lstColor in lstColor%}
+        <option value="{{ lstColor }}">{{ lstColor }}</option>
+        {% endfor %}
+    </select>
+    </div>
+  </div>
+  <!-- ./col- -->
+  {% comment %} This will submit the changes {% endcomment %}
+  <div class="col-xs-12 col-sm-6">
+    <div class="input-field name">
+      <span class="btn-border">
+        <button
+          type="submit"
+          class="btn btn-primary btn-custom-border text-uppercase"
+          onclick="alert('Update successfully!');"
+        >
+          Update
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+  <!-- ./col- -->
+</form>
+{%endblock%}
