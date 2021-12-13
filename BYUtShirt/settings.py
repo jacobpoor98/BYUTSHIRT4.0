@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-zk8tt+mr2&zg_x^o@@oq^%p7h9pkal#_-1nno$cd^eb+yhco(0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'BYUtShirt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swag_final_final',  # Name of the database
-        'USER': 'doamazingthings',
-        'PASSWORD': 'Admin123!',
-        'HOST': 'doamazingthings.postgres.database.azure.com'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'swag_final_final',  # Name of the database
+#         'USER': 'doamazingthings',
+#         'PASSWORD': 'Admin123!',
+#         'HOST': 'doamazingthings.postgres.database.azure.com'
+#     }
+# }
 
 
 # Password validation
