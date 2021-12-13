@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'BYUtShirt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'swag_final_final',  # Name of the database
-#         'USER': 'doamazingthings',
-#         'PASSWORD': 'Admin123!',
-#         'HOST': 'doamazingthings.postgres.database.azure.com'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'swag_final_final',  # Name of the database
+        'USER': 'doamazingthings',
+        'PASSWORD': 'Admin123!',
+        'HOST': 'doamazingthings.postgres.database.azure.com'
+    }
+}
 
 
 # Password validation

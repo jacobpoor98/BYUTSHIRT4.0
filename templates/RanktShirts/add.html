@@ -44,10 +44,10 @@
                     <!-- /.close -->
         {% comment %} This form will collect information for the articlesOfClothing table {% endcomment %}
         <section class="page-section" id="contact">
-            <div style="text-align: center">
-                <h1 style="color: white;">Add Some Swag!</h1>
-            </div>
-            <div class="container">
+            {% comment %} <div style="text-align: center">
+                <h1 style="color: blue;">Add Some Swag!</h1>
+            </div> {% endcomment %}
+            <div class="container"><br><br><br><br><br><br><br>
         <form id="contact-form" style="padding: 2rem 2rem 2rem 2rem" action="{% url 'save' %}" method="POST"> {% csrf_token %}
             <div style="display: flex; justify-content: center;">
                 <div style="display: grid; grid-gap: 1rem;

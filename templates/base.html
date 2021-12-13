@@ -26,7 +26,7 @@
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse" id="navbarResponsive" style >
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'add' %}">Add Clothing</a></li>
@@ -34,8 +34,8 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                     </ul>
                 </div>
-            </div>
-        </nav>
+            </div><br>
+        </nav><br>
           {%block content%} {% endblock %} 
           {% comment %} Takes you back to the index page {% endcomment %}
           <footer class="footer py-4">
