@@ -1,143 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html class="no-js" lang="">
-    <head>
-        <!-- meta charset -->
-        <meta charset="utf-8">
-        <!-- site title -->
-        <title>BYU Clothing</title>
-        <!-- meta description -->
-        <meta name="description" content="">
-        <!-- mobile viwport meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- fevicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="{%static 'favicon.ico'%}">
-        
-        <!-- ================================
-        CSS Files
-        ================================= -->
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
-        <link rel="stylesheet" href="{%static 'css/themefisher-fonts.min.css'%}">
-        <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
-        <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
-        <link rel="stylesheet" href="{%static 'css/main.css'%}">
-        <link rel="stylesheet" href="{%static 'css/dark.css'%}">
-        <link id="color-changer" rel="stylesheet" href="{%static 'css/colors/red.css'%}">
-    </head>
-
-    <body class="dark">
-
-        <div class="preloader">
-            <div class="loading-mask"></div>
-            <div class="loading-mask"></div>
-            <div class="loading-mask"></div>
-            <div class="loading-mask"></div>
-            <div class="loading-mask"></div>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<body id="page-top">
+    <!-- Navigation-->
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Welcome To Our Studio!</div>
+            <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <div style="display: flex; justify-content: space-evenly">
+                <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'add' %}">Add Clothing</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'ranking' %}">View Swag</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'about' %}">Tell Me More</a>
+            </div>
         </div>
-        </div>
-
-        <main class="site-wrapper">
-            <div class="pt-table">
-                <div class="pt-tablecell page-home relative" style="background-image: url('img/banner.jpg');">
-                    <div class="overlay"></div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-                                <div class="page-title home text-center">
-                                    {% comment %} <img src="{%static 'img/phantom.png' %}" alt=""> {% endcomment %}
-                                    <h1 style="font-size: 60px">The Official BYU Clothing Database</h1>
-                                    <p>A place for all to find the best in BYU athletic gear.</p>
-                                </div>
-                                {% comment %} These buttons will take you to the various places in our web application {% endcomment %}
-                                {% comment %} Various css bootstrap themes have been applied {% endcomment %}
-                                <div class="hexagon-menu clear">
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="{%url 'add'%}" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class="tf-profile-male"></i>
-                                                </span>
-                                                <span class="title">Add Clothing</span>
-                                            </span>
-                                            <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="{%url 'ranking'%}" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class="tf-tools-2"></i>
-                                                </span>
-                                                <span class="title">View Swag</span>
-                                            </span>
-                                            <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>    
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="{%url 'about'%}" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class="tf-tools"></i>
-                                                </span>
-                                                <span class="title">About</span>
-                                            </span>
-                                            <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                </div> <!-- /.hexagon-menu -->
-
-                            </div> <!-- /.col-xs-12 -->
-
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-
-                </div> <!-- /.pt-tablecell -->
-            </div> <!-- /.pt-table -->
-        </main> <!-- /.site-wrapper -->
-        
-        <!-- ================================
-        JavaScript Libraries
-        ================================= -->
-        <script src="{%static 'js/vendor/jquery-2.2.4.min.js'%}"></script>
-        <script src="{%static 'js/vendor/bootstrap.min.js'%}"></script>
-        <!-- <script src="js/jquery.easing.min.js"></script> -->
-        <script src="{%static 'js/isotope.pkgd.min.js'%}"></script>
-        <script src="{%static 'js/jquery.nicescroll.min.js'%}"></script>
-        <script src="{%static 'js/owl.carousel.min.js'%}"></script>
-        <script src="{%static 'js/jquery-validation.min.js'%}"></script>
-        <script src="{%static 'js/form.min.js'%}"></script>
-        <script src="{%static 'js/main.js'%}"></script>
-    </body>
-</html>
-
+    </header>
+</body>
+{% endblock %}
