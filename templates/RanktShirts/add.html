@@ -42,64 +42,68 @@
                     <!-- .close -->
                     <a href="{%url 'index'%}" class="page-close"><i class="tf-ion-close"></i></a>
                     <!-- /.close -->
-        <div style="text-align: center">
-            <h1>Add Some Swag!</h1>
-        </div>
         {% comment %} This form will collect information for the articlesOfClothing table {% endcomment %}
         <section class="page-section" id="contact">
+            <div style="text-align: center">
+                <h1 style="color: white;">Add Some Swag!</h1>
+            </div>
             <div class="container">
         <form id="contact-form" style="padding: 2rem 2rem 2rem 2rem" action="{% url 'save' %}" method="POST"> {% csrf_token %}
-            <div style="display: grid; grid-gap: 1rem;
-            grid-template-columns: min-content 1fr; grid-column: 1 / span 2;">
-            <div style="width: 25rem">
-                <span class= "input-icon" id="clothing_name">Title</span>
-                <input type="text" class="form-control" name="clothing_name" placeholder="Clothing Name" autofocus required>
-            </div>
-            <div style="width: 25rem">
-                <span class= "input-icon" id="price">Price $</span>
-                <input type="text" class="form-control" name="price" placeholder="Price" required>
-            </div>
-            <div style="width: 25rem">
-                <span class= "input-icon" id="category">Category</span>
-                <select class="form-control" name="category" id="category" required>
-                    <option value="">Choose Category Type</option>
-                    {% for lstCategory in lstCategory%}
-                    <option value="{{ lstCategory }}">{{ lstCategory }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div style="width: 25rem">
-                <span class= "input-icon" id="material">Material</span>
-                <select class="form-control" name="material" id="material" required>
-                    <option value="">Choose Material Type</option>
-                    {% for lstMaterials in lstMaterials%}
-                    <option value="{{ lstMaterials }}">{{ lstMaterials }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div style="width: 25rem">
-                <span class= "input-icon" id="size">Size</span>
-                <select class="form-control" name="size" id="size" required>
-                    <option value="">Size</option>
-                    {% for lstSize in lstSize%}
-                    <option value="{{ lstSize }}">{{ lstSize }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div style="width: 25rem">
-                <span class= "input-icon" id="pColor">Color</span>
-                <select class="form-control" name="pColor" id="pColor" required>
-                    <option value="">Primary Color</option>
-                    {% for lstColor in lstColor%}
-                    <option value="{{ lstColor }}">{{ lstColor }}</option>
-                    {% endfor %}
-                </select>
+            <div style="display: flex; justify-content: center;">
+                <div style="display: grid; grid-gap: 1rem;
+                grid-template-columns: min-content 1fr; grid-column: 1 / span 2;">
+                    <div style="width: 25rem">
+                        <span class= "input-icon" id="clothing_name">Title</span>
+                        <input type="text" class="form-control" name="clothing_name" placeholder="Clothing Name" autofocus required>
+                    </div>
+                    <div style="width: 25rem">
+                        <span class= "input-icon" id="price">Price $</span>
+                        <input type="text" class="form-control" name="price" placeholder="Price" required>
+                    </div>
+                    <div style="width: 25rem">
+                        <span class= "input-icon" id="category">Category</span>
+                        <select class="form-control" name="category" id="category" required>
+                            <option value="">Choose Category Type</option>
+                            {% for lstCategory in lstCategory%}
+                            <option value="{{ lstCategory }}">{{ lstCategory }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div style="width: 25rem">
+                        <span class= "input-icon" id="material">Material</span>
+                        <select class="form-control" name="material" id="material" required>
+                            <option value="">Choose Material Type</option>
+                            {% for lstMaterials in lstMaterials%}
+                            <option value="{{ lstMaterials }}">{{ lstMaterials }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div style="width: 25rem">
+                        <span class= "input-icon" id="size">Size</span>
+                        <select class="form-control" name="size" id="size" required>
+                            <option value="">Size</option>
+                            {% for lstSize in lstSize%}
+                            <option value="{{ lstSize }}">{{ lstSize }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div style="width: 25rem">
+                        <span class= "input-icon" id="pColor">Color</span>
+                        <select class="form-control" name="pColor" id="pColor" required>
+                            <option value="">Primary Color</option>
+                            {% for lstColor in lstColor%}
+                            <option value="{{ lstColor }}">{{ lstColor }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
             </div>
 
             {% comment %} The submit button will update the insert the info into the database {% endcomment %}
-                <br><br>
-                        <button type="submit" class="btn btn-primary btn-custom-border text-uppercase" onclick="alert('Clothing added!'); location.href='ranking.html'">Add Swag</button>
-                    </span>
+            <br><br>
+            <div style="display: flex; justify-content: center">
+                <button type="submit" class="btn btn-primary btn-custom-border text-uppercase" style="width: 15rem" onclick="alert('Clothing added!'); location.href='ranking.html'">Add Swag</button>
+            </div>
         </form>
                     <!-- /.container -->
                 </div> <!-- /.pt-tablecell -->
