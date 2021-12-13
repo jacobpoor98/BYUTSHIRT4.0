@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 from pathlib import Path
-
+import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-zk8tt+mr2&zg_x^o@@oq^%p7h9pkal#_-1nno$cd^eb+yhco(0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'BYUtShirt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BYUTShirt2.0',  # Name of the database
-        'USER': 'postgres',
-        'PASSWORD': 'Possql@352',
-        'HOST': 'localhost'
+        'NAME': 'swag_final_final',  # Name of the database
+        'USER': 'doamazingthings',
+        'PASSWORD': 'Admin123!',
+        'HOST': 'doamazingthings.postgres.database.azure.com'
     }
 }
 
@@ -133,6 +133,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'BYUtShirt/static')]
 
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -140,3 +142,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+django_heroku.settings(locals())
