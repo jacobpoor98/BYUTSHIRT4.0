@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'byushirtsofficial'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_407C6177AB3F42659BF491D4BAB794D0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_77D6E61ACB804AEF906F05333F0651DF }}
