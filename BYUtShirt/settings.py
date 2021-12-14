@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'BYUtShirt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swag_final_final',  # Name of the database
-        'USER': 'doamazingthings',
+        'NAME': 'swag',  # Name of the database
+        'USER': 'foxpinkney',
         'PASSWORD': 'Admin123!',
-        'HOST': 'doamazingthings.postgres.database.azure.com'
+        'HOST': 'foxpinkney.postgres.database.azure.com'
     }
 }
 
