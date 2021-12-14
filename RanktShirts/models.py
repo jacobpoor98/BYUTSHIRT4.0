@@ -7,12 +7,18 @@ from django.db.models.deletion import DO_NOTHING
 class Material(models.Model):
     material_name = models.CharField(max_length=20, unique=True)
 
+    class Meta:
+        db_table = "RanktShirts_material"
+
     def __str__(self):
         return (self.material_name)
 
 
 class Category(models.Model):
     category_name = models.CharField(max_length=20, unique=True)
+
+    class Meta:
+        db_table = "RanktShirts_category"
 
     def __str__(self):
         return (self.category_name)
@@ -21,12 +27,18 @@ class Category(models.Model):
 class Size(models.Model):
     size_name = models.CharField(max_length=3, unique=True)
 
+    class Meta:
+        db_table = "RanktShirts_size"
+
     def __str__(self):
         return (self.size_name)
 
 
 class PrimaryColor(models.Model):
     color_name = models.CharField(max_length=20, unique=True)
+
+    class Meta:
+        db_table = "RanktShirts_primarycolor"
 
     def __str__(self):
         return (self.color_name)
@@ -43,6 +55,9 @@ class ArticleOfClothing(models.Model):
         PrimaryColor, on_delete=models.DO_NOTHING, to_field='color_name', verbose_name="Primary Color")
     category = models.ForeignKey(
         Category, on_delete=models.DO_NOTHING, to_field='category_name')
+
+    class Meta:
+        db_table = "RanktShirts_articleofclothing"
 
     def __str__(self):
         return (self.clothing_name)
